@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        div {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: red;
+            cursor: move;
+            -webkit-user-select: none;
+            font-size: 48px;
+            text-align: center;
+            line-height: 100px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<div>一</div>
+<div style="left: 150px">二</div>
+<div style="left: 300px">三</div>
+<div style="left: 450px"><img src="apple_1_bigger.jpg" alt="" style="width: 100px;height: 100px"></div>
+<script charset="utf-8" type="text/javascript" src="eventSelf.js"></script>
+<script charset="utf-8" type="text/javascript" src="drag.js"></script>
+<script charset="utf-8" type="text/javascript" src="effect.js"></script>
+<script>
+    var aBox = document.getElementsByTagName('div');
+    var zIndex = 0;
+    for (var i = 0; i < aBox.length; i++) {
+        on(aBox[i], 'mousedown', down);
+        on(aBox[i], 'selfabcd1', function () {
+            this.style.zIndex = ++zIndex
+        });
+        on(aBox[i], 'selfabcd1', clearEffect);
+        on(aBox[i], 'selfabcd2', getSpeed);
+        on(aBox[i], 'selfabcd3', drop);
+        on(aBox[i], 'selfabcd3', fly);
+    }
+</script>
+</body>
+</html>
